@@ -344,7 +344,7 @@ export default function Experiment() {
       dispatch(updateRunId(runId))
       router.push('/experiment/sort')
     }
-  }, [router, userId, runId, type, preState, state, completed])
+  }, [router, userId, runId, type, preState, state, completed, dispatch])
 
   return (
     <Layout >
