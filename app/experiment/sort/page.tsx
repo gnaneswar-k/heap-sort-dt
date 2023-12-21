@@ -339,13 +339,13 @@ export default function Experiment() {
   useEffect(() => {
     // Log the userID
     // console.log(userId)
-    // Log run actions.
-    if (runId !== "") {
-      updateRun({}, runId, type, preState, state)
-    }
     // Redirect upon completion.
     if (completed) {
       router.push('/thanks')
+    }
+    // Log run actions.
+    else if (runId !== "") {
+      updateRun({}, runId, type, preState, state)
     }
   }, [router, userId, runId, type, preState, state, completed])
 
