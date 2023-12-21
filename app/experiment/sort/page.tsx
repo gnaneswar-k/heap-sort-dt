@@ -218,7 +218,7 @@ export default function Experiment() {
   const initialState: SortingState = {
     finalArray: [],
     heapData: heapifyState.heapData,
-    node: heapifyState.node === null ? null : 0
+    node: heapifyState.node === null || heapifyState.heapData.length === 0 ? null : 0
   }
   // Initialisation.
   const userId = useAppSelector(selectUserId)
@@ -428,7 +428,7 @@ export default function Experiment() {
                 {/* Node selected in the heap */}
                 <div className="flex text-center p-1 text-purple-600">
                   Selected Node = {
-                    state.node === null || state.heapData.length === 0
+                    state.node === null
                       ? "None"
                       : state.node === 0
                         ? "Root"
