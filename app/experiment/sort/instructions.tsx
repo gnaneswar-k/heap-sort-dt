@@ -26,8 +26,8 @@ export default function Information() {
             <tr>
               <td className="border-2 border-black">Selected Node</td>
               <td className="border-2 border-black">str</td>
-              <td className="border-2 border-black">"Root", "End"</td>
-              <td className="border-2 border-black">"Root"</td>
+              <td className="border-2 border-black">&quot;Root&quot;, &quot;End&quot;</td>
+              <td className="border-2 border-black">&quot;Root&quot;</td>
             </tr>
           </tbody>
         </table>

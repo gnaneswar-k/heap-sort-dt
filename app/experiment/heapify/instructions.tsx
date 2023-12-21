@@ -34,8 +34,8 @@ export default function Information() {
             <tr>
               <td className="border-2 border-black">Selected Node</td>
               <td className="border-2 border-black">int, str</td>
-              <td className="border-2 border-black">Natural Numbers, "None"</td>
-              <td className="border-2 border-black">"None"</td>
+              <td className="border-2 border-black">Natural Numbers, &quot;None&quot;</td>
+              <td className="border-2 border-black">&quot;None&quot;</td>
             </tr>
           </tbody>
         </table>
