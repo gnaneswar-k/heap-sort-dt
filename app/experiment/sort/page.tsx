@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import API from "@/app/api"
 import { useAppSelector } from "@/lib/hooks"
 import { useRouter } from "next/navigation"
-import { selectHeapState, selectRunId, selectUserId } from "@/lib/features/userData/userDataSlice"
+import { selectHeapArray, selectRunId, selectUserId } from "@/lib/features/userData/userDataSlice"
 
 // Heap Sort State Interface.
 interface SortingState {
@@ -213,12 +213,12 @@ export default function Experiment() {
   // Router for navigation between pages.
   const router = useRouter()
   // Final state in heapify part of experiment.
-  const heapifyState = useAppSelector(selectHeapState)
+  const heapifyArray = useAppSelector(selectHeapArray).slice()
   // Initial State for Sort Experiment.
   const initialState: SortingState = {
     finalArray: [],
-    heapData: heapifyState.heapData,
-    node: heapifyState.node === null || heapifyState.heapData.length === 0 ? null : 0
+    heapData: heapifyArray,
+    node: heapifyArray.length === 0 ? null : 0
   }
   // Initialisation.
   const userId = useAppSelector(selectUserId)

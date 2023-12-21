@@ -13,14 +13,14 @@ export interface HeapSortState {
 export interface UserDataState {
   userId: string,
   runId: string,
-  heapState: HeapSortState
+  heapArray: number[]
 }
 
 // Define the initial state using that type
 const initialState: UserDataState = {
   userId: "",
   runId: "",
-  heapState: {} as HeapSortState
+  heapArray: []
 }
 
 export const userDataSlice = createSlice({
@@ -38,17 +38,17 @@ export const userDataSlice = createSlice({
       state.runId = action.payload
     },
     // Update the heapArray
-    updateHeapState: (state, action: PayloadAction<HeapSortState>) => {
-      state.heapState = action.payload
+    updateHeapArray: (state, action: PayloadAction<number[]>) => {
+      state.heapArray = action.payload
     }
   }
 })
 
-export const { updateUserId, updateRunId, updateHeapState } = userDataSlice.actions
+export const { updateUserId, updateRunId, updateHeapArray } = userDataSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectUserId = (state: RootState) => state.userData.userId
 export const selectRunId = (state: RootState) => state.userData.runId
-export const selectHeapState = (state: RootState) => state.userData.heapState
+export const selectHeapArray = (state: RootState) => state.userData.heapArray
 
 export default userDataSlice.reducer

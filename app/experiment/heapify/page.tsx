@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import API from "@/app/api"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import { useRouter } from "next/navigation"
-import { HeapSortState, selectUserId, updateHeapState, updateRunId } from "@/lib/features/userData/userDataSlice"
+import { HeapSortState, selectUserId, updateHeapArray, updateRunId } from "@/lib/features/userData/userDataSlice"
 
 // API Function Calls
 
@@ -340,7 +340,7 @@ export default function Experiment() {
     }
     // Redirect upon completion.
     if (completed) {
-      dispatch(updateHeapState({...state}))
+      dispatch(updateHeapArray(state.heapData.slice()))
       dispatch(updateRunId(runId))
       router.push('/experiment/sort')
     }
