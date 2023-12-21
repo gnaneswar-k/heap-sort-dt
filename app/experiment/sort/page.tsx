@@ -429,11 +429,11 @@ export default function Experiment() {
                 <div className="flex text-center p-1 text-purple-600">
                   Selected Node = {
                     state.node === null || state.heapData.length === 0
-                    ? "None"
-                      : state.node === state.heapData.length - 1
-                        ? "End"
-                        : state.node === 0
+                      ? "None"
+                      : state.node === 0
                         ? "Root"
+                        : state.node === state.heapData.length - 1
+                          ? "End"
                           : state.heapData[state.node].toString()
                   }
                 </div>
